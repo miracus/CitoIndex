@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue Video Playlist</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+
+        <div class="modal fade"
+             tabindex="-1"
+             aria-labelledby="exampleModalLabel"
+             aria-hidden="true"
+             ref="CellInfo">
+
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" aria-label="Close" v-on:click="HideCellInfo()"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row" v-if="current != null">
+                           {{current.dna}}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" v-on:click="HideCellInfo()">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cell" 
+                v-for="cell in cells" 
+                v-bind:style="cell.style" 
+                v-on:click="ShowCellInfo(cell)">
+
+            <div class="glycocalyx">
+                <div class="membrane">
+                    <div class="organelles">
+                        <div class="mitochondrion" 
+                             v-for="mitochondrion in cell.mitochondrions"
+                             v-bind:style="mitochondrion.style">
+
+                        </div>
+                       
+
+
+                        <div class="lysosome"
+                             v-for="lysosome in cell.lysosomes"
+                             v-bind:style="lysosome.style">
+
+                        </div>
+                    </div>
+                    <div class="nucleo">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

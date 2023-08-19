@@ -1,0 +1,84 @@
+#app {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    width: 100vw;
+    height: 100vw;
+    background: #008080;
+    background-image:radial-gradient(#ffffff78,#036363);
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    transition: 0.7s linear;
+    background: #e0e5e463;
+    border-radius: 45%;
+}
+.cell:hover{
+    background: #e0e5e4;
+}
+
+    .cell .membrane {
+        border: 4px double #009999;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 45%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+
+    .cell .nucleo {
+        border: 4px double #ff0000;
+        position: relative;
+        width: 40%;
+        height: 40%;
+        border-radius: 50%;
+        background: #864e9c;
+    }
+
+        .cell .nucleo::after {
+            position: absolute;
+            border: 2px solid #ff0000;
+            content: "";
+            width: 20%;
+            height: 20%;
+            left: 40%;
+            top: 40%;
+            border-radius: 50%;
+            background: #632b7a
+        }
+
+    .cell .glycocalyx {
+        border: 2px dashed #ff6a00;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 45%;
+    }
+
+    .cell .organelles .mitochondrion {
+        width: 30px;
+        height: 15px;
+        background: #009999;
+        border-radius: 10px;
+        position: absolute;
+        left: 45px;
+        top: 45px;
+        transform: rotate(45deg);
+        border: 1px dashed black;
+
+    }
+    .cell .organelles .lysosome {
+        width: 10px;
+        height: 10px;
+        background: #e2b447;
+        border-radius: 5px;
+        position: absolute;
+        left: 55px;
+        top: 70px;
+    }
+
