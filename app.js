@@ -8,10 +8,10 @@ var recognition = new (window.SpeechRecognition ||
 let started = false;
 
 function speech() {
-    if (started) {
-        return
-    }
-    started = true;
+    //if (started) {
+    //    return
+    //}
+    //started = true;
 
     recognition.lang = "uk-Ua";
     recognition.maxAlternatives = 1;
